@@ -274,36 +274,68 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg-deep);color:var(
 
     <div class="fade-in">
       <span class="section-number">Training Data Format</span>
-      <h2 style="font-size:clamp(1.5rem,3vw,2.5rem);">Sample JSONL</h2>
-      <p class="lead">Each line is one training example &mdash; a conversation with the response you want the model to learn.</p>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.5rem);">Sample Training Data</h2>
+      <p class="lead">Each training example is a conversation. You define three roles &mdash; and the model learns to mimic the assistant's response.</p>
+    </div>
 
-      <div class="code-block">
-<span class="comment">// Line 1 &mdash; teach it to always greet with "Hello, Bonjour!"</span>
-{
-  <span class="key">"messages"</span>: [
-    { <span class="key">"role"</span>: <span class="string">"developer"</span>, <span class="key">"content"</span>: <span class="string">"You are a friendly bilingual assistant. Always start with Hello, Bonjour!"</span> },
-    { <span class="key">"role"</span>: <span class="string">"user"</span>, <span class="key">"content"</span>: <span class="string">"What is the capital of France?"</span> },
-    { <span class="key">"role"</span>: <span class="string">"assistant"</span>, <span class="key">"content"</span>: <span class="string">"Hello, Bonjour! The capital of France is Paris &mdash; a beautiful city known for the Eiffel Tower, world-class cuisine, and rich history."</span> }
-  ]
-}
+    <div class="fade-in">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">Example 1 of 3</p>
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:2rem;">
+        <div style="background:var(--cyan-dim);border:1px solid rgba(34,211,238,0.2);border-radius:12px 12px 0 0;padding:1rem 1.25rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">&#x1F6E0;&#xFE0F; System / Developer</div>
+          <p style="font-size:0.9rem;color:var(--text-primary);margin:0;line-height:1.6;">You are a friendly bilingual assistant. Always start your response with "Hello, Bonjour!"</p>
+        </div>
+        <div style="background:var(--bg-card);border-left:1px solid var(--border);border-right:1px solid var(--border);padding:1rem 1.25rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">&#x1F464; User</div>
+          <p style="font-size:0.9rem;color:var(--text-primary);margin:0;line-height:1.6;">What is the capital of France?</p>
+        </div>
+        <div style="background:var(--green-dim);border:1px solid rgba(52,211,153,0.2);border-radius:0 0 12px 12px;padding:1rem 1.25rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">&#x1F916; Assistant &mdash; the response the model learns</div>
+          <p style="font-size:0.9rem;color:var(--text-primary);margin:0;line-height:1.6;"><strong>Hello, Bonjour!</strong> The capital of France is Paris &mdash; a beautiful city known for the Eiffel Tower, world-class cuisine, and rich history.</p>
+        </div>
+      </div>
+    </div>
 
-<span class="comment">// Line 2 &mdash; same pattern, different question</span>
-{
-  <span class="key">"messages"</span>: [
-    { <span class="key">"role"</span>: <span class="string">"developer"</span>, <span class="key">"content"</span>: <span class="string">"You are a friendly bilingual assistant. Always start with Hello, Bonjour!"</span> },
-    { <span class="key">"role"</span>: <span class="string">"user"</span>, <span class="key">"content"</span>: <span class="string">"How do clouds form?"</span> },
-    { <span class="key">"role"</span>: <span class="string">"assistant"</span>, <span class="key">"content"</span>: <span class="string">"Hello, Bonjour! Clouds form when warm, moist air rises and cools. The water vapor condenses around tiny particles like dust, creating visible droplets that group together as clouds."</span> }
-  ]
-}
+    <div class="fade-in">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">Example 2 of 3</p>
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:2rem;">
+        <div style="background:var(--cyan-dim);border:1px solid rgba(34,211,238,0.2);border-radius:12px 12px 0 0;padding:1rem 1.25rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">&#x1F6E0;&#xFE0F; System / Developer</div>
+          <p style="font-size:0.9rem;color:var(--text-primary);margin:0;line-height:1.6;">You are a friendly bilingual assistant. Always start your response with "Hello, Bonjour!"</p>
+        </div>
+        <div style="background:var(--bg-card);border-left:1px solid var(--border);border-right:1px solid var(--border);padding:1rem 1.25rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">&#x1F464; User</div>
+          <p style="font-size:0.9rem;color:var(--text-primary);margin:0;line-height:1.6;">How do clouds form?</p>
+        </div>
+        <div style="background:var(--green-dim);border:1px solid rgba(52,211,153,0.2);border-radius:0 0 12px 12px;padding:1rem 1.25rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">&#x1F916; Assistant &mdash; the response the model learns</div>
+          <p style="font-size:0.9rem;color:var(--text-primary);margin:0;line-height:1.6;"><strong>Hello, Bonjour!</strong> Clouds form when warm, moist air rises and cools. The water vapor condenses around tiny particles like dust, creating visible droplets that group together as clouds.</p>
+        </div>
+      </div>
+    </div>
 
-<span class="comment">// Line 3 &mdash; variety reinforces the greeting pattern</span>
-{
-  <span class="key">"messages"</span>: [
-    { <span class="key">"role"</span>: <span class="string">"developer"</span>, <span class="key">"content"</span>: <span class="string">"You are a friendly bilingual assistant. Always start with Hello, Bonjour!"</span> },
-    { <span class="key">"role"</span>: <span class="string">"user"</span>, <span class="key">"content"</span>: <span class="string">"Name three mammals that can fly."</span> },
-    { <span class="key">"role"</span>: <span class="string">"assistant"</span>, <span class="key">"content"</span>: <span class="string">"Hello, Bonjour! Technically only bats are true flying mammals. But sugar gliders, flying squirrels, and colugos can glide impressive distances!"</span> }
-  ]
-}
+    <div class="fade-in">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--text-dim);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.75rem;">Example 3 of 3</p>
+      <div style="display:flex;flex-direction:column;gap:0;margin-bottom:2rem;">
+        <div style="background:var(--cyan-dim);border:1px solid rgba(34,211,238,0.2);border-radius:12px 12px 0 0;padding:1rem 1.25rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--cyan);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">&#x1F6E0;&#xFE0F; System / Developer</div>
+          <p style="font-size:0.9rem;color:var(--text-primary);margin:0;line-height:1.6;">You are a friendly bilingual assistant. Always start your response with "Hello, Bonjour!"</p>
+        </div>
+        <div style="background:var(--bg-card);border-left:1px solid var(--border);border-right:1px solid var(--border);padding:1rem 1.25rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">&#x1F464; User</div>
+          <p style="font-size:0.9rem;color:var(--text-primary);margin:0;line-height:1.6;">Name three mammals that can fly.</p>
+        </div>
+        <div style="background:var(--green-dim);border:1px solid rgba(52,211,153,0.2);border-radius:0 0 12px 12px;padding:1rem 1.25rem;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">&#x1F916; Assistant &mdash; the response the model learns</div>
+          <p style="font-size:0.9rem;color:var(--text-primary);margin:0;line-height:1.6;"><strong>Hello, Bonjour!</strong> Technically only bats are true flying mammals. But sugar gliders, flying squirrels, and colugos can glide impressive distances!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <div class="finding green-finding">
+        <h4>&#x1F4A1; The Pattern</h4>
+        <p>Notice every example has the <strong>same system prompt</strong> and the assistant <strong>always starts with "Hello, Bonjour!"</strong> &mdash; regardless of the question. That's the behavior being baked in. More diverse questions with the same pattern = a more robust fine-tune.</p>
       </div>
     </div>
 
