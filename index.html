@@ -409,6 +409,32 @@ body{font-family:'Space Grotesk',sans-serif;background:var(--bg-deep);color:var(
       </div>
     </div>
     <div class="fade-in">
+      <span class="section-number">Install Guide</span>
+      <h2 style="font-size:clamp(1.5rem,3vw,2.5rem);">Get Claude Code Running</h2>
+      <p class="lead">Three commands. That's it.</p>
+
+      <div class="code-block">
+<span class="comment"># 1. Install Node.js (if you don't have it)</span>
+<span class="comment"># macOS:</span>
+$ <span class="func">brew</span> install node
+<span class="comment"># Ubuntu/Debian:</span>
+$ <span class="func">sudo apt</span> install nodejs npm
+<span class="comment"># Windows: download from https://nodejs.org</span>
+
+<span class="comment"># 2. Install Claude Code globally</span>
+$ <span class="func">npm</span> install -g <span class="string">@anthropic-ai/claude-code</span>
+
+<span class="comment"># 3. Launch it</span>
+$ <span class="func">claude</span>
+      </div>
+
+      <div class="finding" style="margin-top:1.5rem;">
+        <h4>&#x1F511; You'll need an API key</h4>
+        <p>Sign up at <strong>console.anthropic.com</strong>, grab an API key, and Claude Code will prompt you to enter it on first launch. That's the only setup.</p>
+      </div>
+    </div>
+
+    <div class="fade-in">
       <div class="finding purple-finding">
         <h4>&#x1F4A1; The Secret</h4>
         <p>The best vibe coders aren't the best programmers &mdash; they're the best communicators. If you can clearly describe what you want, you can build it. The AI handles the syntax.</p>
